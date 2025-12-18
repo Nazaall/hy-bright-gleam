@@ -26,7 +26,7 @@ export const Hero = () => {
             <Button size="lg" variant="secondary" className="text-lg px-8 py-6 bg-accent hover:bg-accent/90 text-primary font-semibold">
               View Our Catalog
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-white text-white hover:bg-white hover:text-primary font-semibold">
+            <Button size="lg" variant="outline-light" className="text-lg px-8 py-6 font-semibold">
               Get Quote
             </Button>
           </div>
