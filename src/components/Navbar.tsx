@@ -64,7 +64,7 @@ export const Navbar = () => {
               </a>
             ))}
             <Button variant="default" className="w-full mt-4 bg-primary hover:bg-primary/90">
-              Request Quotes
+              Request Quote
             </Button>
           </div>
         )}
