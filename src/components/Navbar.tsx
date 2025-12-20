@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// 1. Import your logo here just like your other images
+import ozoLogo from "@/assets/ozo.png"; 
+
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,10 +25,11 @@ export const Navbar = () => {
           {/* LOGO PLACEMENT */}
           <div className="flex items-center">
             <a href="#home" className="transition-opacity hover:opacity-80">
+              {/* 2. Use the imported variable name here */}
               <img 
-                src="src/assets/ozo-logo final-1.png"
-                alt="OZO Bags Logo" 
-                className="h-10 w-auto object-contain" // Adjusted height to fit h-20 navbar
+                src={ozoLogo} 
+                alt="OZO Bags" 
+                className="h-12 w-auto object-contain" 
               />
             </a>
           </div>
