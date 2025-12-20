@@ -18,10 +18,16 @@ export const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
+          
+          {/* LOGO PLACEMENT */}
           <div className="flex items-center">
-            <h1 className="font-display text-3xl font-bold text-primary">
-              OZO<span className="text-accent">.</span>
-            </h1>
+            <a href="#home" className="transition-opacity hover:opacity-80">
+              <img 
+                src="src/assets/ozo-logo final-1.png"
+                alt="OZO Bags Logo" 
+                className="h-10 w-auto object-contain" // Adjusted height to fit h-20 navbar
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
