@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Building2, ShoppingBag, Store, Globe } from "lucide-react";
 
@@ -44,9 +45,50 @@ const testimonials = [
     author: "Global Distribution Co.",
     role: "Sourcing Manager",
   },
+  {
+    quote: "Exceptional craftsmanship and professional communication throughout our bulk order. Highly recommend for corporate gifting needs.",
+    author: "Tech Solutions Inc.",
+    role: "HR Director",
+  },
+  {
+    quote: "We've partnered with OZO for multiple events and they always deliver on time with consistent quality. A reliable manufacturing partner.",
+    author: "Event Management Pro",
+    role: "Operations Head",
+  },
+  {
+    quote: "The team at OZO truly understands branding requirements. Our custom bags exceeded expectations and impressed our clients.",
+    author: "Marketing Agency Plus",
+    role: "Creative Director",
+  },
 ];
 
 export const OurClients = () => {
+  const [isPaused, setIsPaused] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let animationId: number;
+    let scrollPosition = 0;
+
+    const scroll = () => {
+      if (!isPaused && scrollContainer) {
+        scrollPosition += 0.5;
+        if (scrollPosition >= scrollContainer.scrollWidth / 2) {
+          scrollPosition = 0;
+        }
+        scrollContainer.scrollLeft = scrollPosition;
+      }
+      animationId = requestAnimationFrame(scroll);
+    };
+
+    animationId = requestAnimationFrame(scroll);
+
+    return () => cancelAnimationFrame(animationId);
+  }, [isPaused]);
+
   return (
     <section id="clients" className="py-12 md:py-20 bg-muted/30">
       <div className="container px-4">
@@ -87,21 +129,27 @@ export const OurClients = () => {
           <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-primary text-center mb-8 md:mb-12">
             What Our Clients Say
           </h3>
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="text-center animate-fade-in"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="text-3xl md:text-5xl text-accent mb-2 md:mb-4">"</div>
-                <p className="text-muted-foreground mb-4 md:mb-6 italic text-sm md:text-base">{testimonial.quote}</p>
-                <div>
-                  <div className="font-semibold text-primary text-sm md:text-base">{testimonial.author}</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">{testimonial.role}</div>
+          <div 
+            ref={scrollRef}
+            className="overflow-hidden"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <div className="flex gap-6 md:gap-8" style={{ width: 'max-content' }}>
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="text-center flex-shrink-0 w-72 md:w-80 lg:w-96"
+                >
+                  <div className="text-3xl md:text-5xl text-accent mb-2 md:mb-4">"</div>
+                  <p className="text-muted-foreground mb-4 md:mb-6 italic text-sm md:text-base">{testimonial.quote}</p>
+                  <div>
+                    <div className="font-semibold text-primary text-sm md:text-base">{testimonial.author}</div>
+                    <div className="text-xs md:text-sm text-muted-foreground">{testimonial.role}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

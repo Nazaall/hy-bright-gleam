@@ -58,7 +58,7 @@ export const Footer = () => {
                 <Facebook size={18} className="md:w-5 md:h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/ozobags/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 md:w-10 md:h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent hover:text-primary transition-all"
@@ -66,7 +66,7 @@ export const Footer = () => {
                 <Instagram size={18} className="md:w-5 md:h-5" />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@OZObag"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 md:w-10 md:h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent hover:text-primary transition-all"
@@ -74,7 +74,7 @@ export const Footer = () => {
                 <Youtube size={18} className="md:w-5 md:h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/ozo-bags/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 md:w-10 md:h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent hover:text-primary transition-all"
