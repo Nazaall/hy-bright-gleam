@@ -147,8 +147,8 @@ export const CorporateGifting = () => {
         </div>
 
         {/* Bag Solutions */}
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-20 items-stretch">
-          <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-card order-2 lg:order-1">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-20 items-center">
+          <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-card order-2 lg:order-1 aspect-[4/3]">
             <img 
               src={corporateLaptopBags} 
               alt="Corporate welcome kit with branded laptop bags" 
@@ -157,7 +157,7 @@ export const CorporateGifting = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="bg-card rounded-xl md:rounded-2xl p-5 md:p-8 shadow-card order-1 lg:order-2 flex flex-col">
+          <div className="bg-card rounded-xl md:rounded-2xl p-5 md:p-8 shadow-card order-1 lg:order-2">
             <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
                 <Package className="w-5 h-5 md:w-6 md:h-6 text-accent" />
@@ -169,7 +169,7 @@ export const CorporateGifting = () => {
             <p className="text-muted-foreground mb-4 md:mb-6 text-sm md:text-base">
               We manufacture and supply a wide range of bags designed specifically for corporate and institutional use:
             </p>
-            <ul className="space-y-2 md:space-y-3 flex-grow">
+            <ul className="space-y-2 md:space-y-3">
               {bagSolutions.map((solution, index) => (
                 <li key={index} className="flex items-start gap-2 md:gap-3">
                   <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-accent mt-0.5 flex-shrink-0" />
@@ -184,8 +184,8 @@ export const CorporateGifting = () => {
         </div>
 
         {/* Customisation Options */}
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-20 items-stretch">
-          <div className="bg-card rounded-xl md:rounded-2xl p-5 md:p-8 shadow-card flex flex-col">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-20 items-center">
+          <div className="bg-card rounded-xl md:rounded-2xl p-5 md:p-8 shadow-card">
             <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                 <Users className="w-5 h-5 md:w-6 md:h-6 text-primary" />
@@ -197,7 +197,7 @@ export const CorporateGifting = () => {
             <p className="text-muted-foreground mb-4 md:mb-6 text-sm md:text-base">
               Ozobags offers end-to-end customisation support for corporate bulk orders:
             </p>
-            <ul className="space-y-2 md:space-y-3 flex-grow">
+            <ul className="space-y-2 md:space-y-3">
               {customisationOptions.map((option, index) => (
                 <li key={index} className="flex items-start gap-2 md:gap-3">
                   <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -209,7 +209,7 @@ export const CorporateGifting = () => {
               Our team works closely with clients to ensure the final output meets both functional and branding expectations.
             </p>
           </div>
-          <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-card">
+          <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-card aspect-[4/3]">
             <img 
               src={corporateCustomization} 
               alt="Custom branded corporate bags with logo embossing"
@@ -296,27 +296,6 @@ export const CorporateGifting = () => {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="bg-gradient-to-r from-accent to-accent/80 rounded-xl md:rounded-2xl p-5 sm:p-6 md:p-8 lg:p-12 text-center">
-          <h3 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-3 md:mb-4">
-            Get a Quote for Corporate Gift Bags
-          </h3>
-          <p className="text-primary/80 max-w-2xl mx-auto mb-6 md:mb-8 text-sm md:text-base px-2">
-            If you are searching for a <strong className="text-primary">reliable corporate gift bag supplier in Kerala</strong>, 
-            Ozobags can support your bulk and custom requirements.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-lg px-6 md:px-8 w-full sm:w-auto">
-              📞 Contact Us Now
-            </Button>
-            <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm md:text-lg px-6 md:px-8 w-full sm:w-auto">
-              📩 Share Your Brief
-            </Button>
-          </div>
-          <p className="text-primary/70 text-xs md:text-sm mt-4 md:mt-6">
-            Ozobags – Custom Bag Manufacturer in Kerala
-          </p>
-        </div>
       </div>
     </section>
   );
