@@ -35,11 +35,11 @@ export const Hero = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-10 md:mt-16 pt-8 md:pt-16 border-t border-primary-foreground/20">
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-accent mb-1 md:mb-2">15+</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-accent mb-1 md:mb-2">10+</div>
               <div className="text-xs sm:text-sm md:text-base text-primary-foreground/80">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-accent mb-1 md:mb-2">500K+</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-accent mb-1 md:mb-2">100K+</div>
               <div className="text-xs sm:text-sm md:text-base text-primary-foreground/80">Bags Produced</div>
             </div>
             <div className="text-center">
@@ -47,7 +47,7 @@ export const Hero = () => {
               <div className="text-xs sm:text-sm md:text-base text-primary-foreground/80">B2B Clients</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-accent mb-1 md:mb-2">50+</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-accent mb-1 md:mb-2">5+</div>
               <div className="text-xs sm:text-sm md:text-base text-primary-foreground/80">Countries</div>
             </div>
           </div>

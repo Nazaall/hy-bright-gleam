@@ -259,7 +259,7 @@ export const CorporateGifting = () => {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20">
           <div>
             <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4 md:mb-6">
-              Why Choose Ozobags for Corporate Gift Bags in Kerala?
+              Why Choose Ozobags for Corporate Gift Bags?
             </h3>
             <ul className="space-y-3 md:space-y-4">
               {whyChooseUs.map((reason, index) => (

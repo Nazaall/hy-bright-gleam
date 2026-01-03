@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import ozoLogo from "@/assets/ozo.png"; 
 
 export const Footer = () => {
   return (
@@ -7,10 +8,19 @@ export const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
           <div className="col-span-2 md:col-span-1">
             <h3 className="font-display text-xl md:text-2xl font-bold mb-3 md:mb-4">
-              OZO<span className="text-accent">.</span>
+             <div className="flex items-center">
+            <a href="#home" className="transition-opacity hover:opacity-80">
+              <img 
+                src={ozoLogo} 
+                alt="OZO Bags" 
+                className="h-10 md:h-12 w-auto object-contain" 
+              />
+            </a>
+          </div>
+<span className="text-accent">.</span>
             </h3>
             <p className="text-primary-foreground/70 text-sm md:text-base">
-              Leading manufacturer of premium bags for B2B clients worldwide.
+              Leading manufacturer of premium bags worldwide.
             </p>
           </div>
 

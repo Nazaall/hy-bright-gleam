@@ -48,7 +48,7 @@ export const Contact = () => {
                   <div>
                     <div className="font-semibold text-primary mb-1 text-sm md:text-base">Phone</div>
                     <a href="tel:+1234567890" className="text-muted-foreground hover:text-accent transition-colors text-sm md:text-base">
-                      +1 (234) 567-890
+                       00 91 755 9886665
                     </a>
                   </div>
                 </div>
@@ -60,8 +60,10 @@ export const Contact = () => {
                   <div>
                     <div className="font-semibold text-primary mb-1 text-sm md:text-base">Location</div>
                     <p className="text-muted-foreground text-sm md:text-base">
-                      Industrial Area, Manufacturing District<br />
-                      City, Country
+                      48/1016 A <br />
+Karugapilly Junction<br/>
+Desabhimani Rd, Cochin -682026<br/>
+Kerala - India<br/>
                     </p>
                   </div>
                 </div>
