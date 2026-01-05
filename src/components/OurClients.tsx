@@ -1,85 +1,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
-import { Building2, ShoppingBag, Store, Globe } from "lucide-react";
+import { Building2, Briefcase, Store, Globe, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+// Import client logos
+import nestoLogo from "@/assets/clients/nesto-logo.jpg";
+import freshtohomeLogo from "@/assets/clients/freshtohome-logo.jpeg";
+import kalyanSilksLogo from "@/assets/clients/kalyan-silks-logo.png";
+import pothysLogo from "@/assets/clients/pothys-logo.png";
+import dlifeLogo from "@/assets/clients/dlife-logo.png";
+import grandLogo from "@/assets/clients/grand-logo.png";
+import abcLogo from "@/assets/clients/abc-logo.png";
+import stylePlusLogo from "@/assets/clients/style-plus-logo.jpg";
+import anthusLogo from "@/assets/clients/anthus-logo.jpeg";
 
 const clientTypes = [
   {
     icon: Building2,
     title: "Retail Chains",
-    description: "Leading department stores and retail chains across multiple countries",
+    description: "Partnering with major retail chains across India and international markets",
     count: "50+",
   },
   {
-    icon: ShoppingBag,
-    title: "Fashion Brands",
-    description: "Premium fashion brands and designer labels worldwide",
-    count: "80+",
+    icon: Briefcase,
+    title: "B2B Clients",
+    description: "Trusted by businesses for corporate and commercial bag requirements",
+    count: "100+",
   },
   {
     icon: Store,
-    title: "Boutique Stores",
-    description: "Independent boutiques and specialty bag retailers",
-    count: "120+",
+    title: "Stores",
+    description: "Supplying to individual stores and regional retail outlets",
+    count: "200+",
   },
   {
     icon: Globe,
     title: "Online Retailers",
-    description: "E-commerce platforms and online marketplaces",
-    count: "60+",
+    description: "E-commerce partners and online marketplace sellers",
+    count: "10+",
   },
 ];
 
-const testimonials = [
-  {
-    quote: "OZO Bags has been our trusted manufacturing partner for over 5 years. Their quality and reliability are unmatched.",
-    author: "Fashion Retail Group",
-    role: "Procurement Director",
-  },
-  {
-    quote: "The customization capabilities and attention to detail make OZO our go-to manufacturer for premium bag collections.",
-    author: "Luxury Brand International",
-    role: "Product Manager",
-  },
-  {
-    quote: "Consistent quality, timely delivery, and excellent service. OZO understands the needs of wholesale buyers.",
-    author: "Global Distribution Co.",
-    role: "Sourcing Manager",
-  },
-  {
-    quote: "Exceptional craftsmanship and professional communication throughout our bulk order. Highly recommend for corporate gifting needs.",
-    author: "Tech Solutions Inc.",
-    role: "HR Director",
-  },
-  {
-    quote: "We've partnered with OZO for multiple events and they always deliver on time with consistent quality. A reliable manufacturing partner.",
-    author: "Event Management Pro",
-    role: "Operations Head",
-  },
-  {
-    quote: "The team at OZO truly understands branding requirements. Our custom bags exceeded expectations and impressed our clients.",
-    author: "Marketing Agency Plus",
-    role: "Creative Director",
-  },
+const clientLogos = [
+  { src: nestoLogo, alt: "Nesto" },
+  { src: freshtohomeLogo, alt: "Fresh to Home" },
+  { src: kalyanSilksLogo, alt: "Kalyan Silks" },
+  { src: pothysLogo, alt: "Pothys" },
+  { src: dlifeLogo, alt: "D'Life Home Interiors" },
+  { src: grandLogo, alt: "Grand" },
+  { src: abcLogo, alt: "ABC" },
+  { src: stylePlusLogo, alt: "Style Plus" },
+  { src: anthusLogo, alt: "Anthus Pharmaceuticals" },
 ];
 
 export const OurClients = () => {
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const scrollByAmount = (amount: number) => {
+    if (scrollRef.current) {
+      const newPosition = scrollPosition + amount;
+      const maxScroll = scrollRef.current.scrollWidth / 2;
+      
+      let finalPosition = newPosition;
+      if (finalPosition < 0) {
+        finalPosition = maxScroll + finalPosition;
+      } else if (finalPosition >= maxScroll) {
+        finalPosition = finalPosition - maxScroll;
+      }
+      
+      setScrollPosition(finalPosition);
+      scrollRef.current.scrollLeft = finalPosition;
+    }
+  };
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
     let animationId: number;
-    let scrollPosition = 0;
 
     const scroll = () => {
       if (!isPaused && scrollContainer) {
-        scrollPosition += 0.5;
-        if (scrollPosition >= scrollContainer.scrollWidth / 2) {
-          scrollPosition = 0;
-        }
-        scrollContainer.scrollLeft = scrollPosition;
+        setScrollPosition(prev => {
+          let newPos = prev + 0.5;
+          if (newPos >= scrollContainer.scrollWidth / 2) {
+            newPos = 0;
+          }
+          scrollContainer.scrollLeft = newPos;
+          return newPos;
+        });
       }
       animationId = requestAnimationFrame(scroll);
     };
@@ -127,30 +138,52 @@ export const OurClients = () => {
 
         <div className="bg-card rounded-xl md:rounded-2xl p-5 sm:p-6 md:p-8 lg:p-12 shadow-lg">
           <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-primary text-center mb-8 md:mb-12">
-            What Our Clients Say
+            Our Clients
           </h3>
-          <div 
-            ref={scrollRef}
-            className="overflow-hidden"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            <div className="flex gap-6 md:gap-8" style={{ width: 'max-content' }}>
-              {[...testimonials, ...testimonials].map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="text-center flex-shrink-0 w-72 md:w-80 lg:w-96"
-                >
-                  <div className="text-3xl md:text-5xl text-accent mb-2 md:mb-4">"</div>
-                  <p className="text-muted-foreground mb-4 md:mb-6 italic text-sm md:text-base">{testimonial.quote}</p>
-                  <div>
-                    <div className="font-semibold text-primary text-sm md:text-base">{testimonial.author}</div>
-                    <div className="text-xs md:text-sm text-muted-foreground">{testimonial.role}</div>
+          <div className="relative">
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-background shadow-md -ml-3 md:-ml-4"
+              onClick={() => scrollByAmount(-200)}
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            
+            <div 
+              ref={scrollRef}
+              className="overflow-hidden mx-6 md:mx-8"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
+              <div className="flex gap-8 md:gap-12 items-center" style={{ width: 'max-content' }}>
+                {[...clientLogos, ...clientLogos].map((logo, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-24 h-16 md:w-32 md:h-20 lg:w-40 lg:h-24 flex items-center justify-center bg-white rounded-lg p-2 md:p-3"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="max-w-full max-h-full object-contain"
+                    />
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-background shadow-md -mr-3 md:-mr-4"
+              onClick={() => scrollByAmount(200)}
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
           </div>
+          <p className="text-center text-sm text-muted-foreground mt-6">
+            Adding more logos is easy - they automatically accommodate in the carousel
+          </p>
         </div>
       </div>
     </section>
