@@ -215,7 +215,7 @@ export const CorporateGifting = () => {
               alt="Custom branded corporate bags with logo embossing"
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
           </div>
         </div>
