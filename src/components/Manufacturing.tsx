@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import manufacturingImage from "@/assets/manufacturing.jpg";
+import indiamartTrustseal from "@/assets/indiamart-trustseal.jpeg";
 
 const capabilities = [
   "Custom design and development",
@@ -37,9 +38,12 @@ export const Manufacturing = () => {
                 <div className="text-2xl md:text-3xl font-display font-bold text-accent mb-1 md:mb-2">10,000+</div>
                 <div className="text-xs md:text-sm text-muted-foreground">Units per month</div>
               </div>
-              <div className="bg-muted p-4 md:p-6 rounded-lg">
-                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-display font-bold text-accent mb-1 md:mb-2">IndiaMART</div>
-                <div className="text-xs md:text-sm text-muted-foreground">TrustSEAL Certified</div>
+              <div className="bg-muted p-4 md:p-6 rounded-lg flex items-center justify-center">
+                <img
+                  src={indiamartTrustseal}
+                  alt="IndiaMART TrustSEAL Certified"
+                  className="max-h-16 md:max-h-20 object-contain"
+                />
               </div>
             </div>
           </div>

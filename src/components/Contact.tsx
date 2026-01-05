@@ -117,12 +117,21 @@ Kerala - India<br/>
                 </div>
               </div>
 
-              <div className="bg-accent/5 p-4 md:p-6 rounded-lg">
+              <div className="bg-accent/5 p-4 md:p-6 rounded-lg mb-4">
                 <h4 className="font-display font-semibold text-primary mb-2 text-sm md:text-base">
                   Order Quantity
                 </h4>
                 <p className="text-muted-foreground text-sm md:text-base">
                   We accommodate any amount of units. Contact us for your custom requirements.
+                </p>
+              </div>
+
+              <div className="bg-accent/5 p-4 md:p-6 rounded-lg">
+                <h4 className="font-display font-semibold text-primary mb-2 text-sm md:text-base">
+                  Delivery Coverage
+                </h4>
+                <p className="text-muted-foreground text-sm md:text-base">
+                  Kerala and across India. We also export internationally to meet global demand.
                 </p>
               </div>
             </div>
