@@ -112,27 +112,30 @@ export const Contact = () => {
             </div>
 
             <div className="animate-slide-in-right">
-              <form ref={form} onSubmit={sendEmail}>
+              <form ref={form} onSubmit={sendEmail} className="space-y-4 md:space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                   <div>
                     <label className="block text-sm font-medium text-primary mb-2">
                       Name
                     </label>
                     <input
-                      type="text" name="user_name"
+                      type="text"
+                      name="user_name"
                       placeholder="Your name"
                       required
-                      className="h-11 md:h-12"
+                      className="w-full h-11 md:h-12 px-4 rounded-md border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-primary mb-2">
                       Company
                     </label>
-                    <input type="text" name="user_company"
+                    <input
+                      type="text"
+                      name="user_company"
                       placeholder="Company name"
                       required
-                      className="h-11 md:h-12"
+                      className="w-full h-11 md:h-12 px-4 rounded-md border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
                     />
                   </div>
                 </div>
@@ -141,10 +144,12 @@ export const Contact = () => {
                   <label className="block text-sm font-medium text-primary mb-2">
                     Email
                   </label>
-                  <input type="email" name="user_email"
+                  <input
+                    type="email"
+                    name="user_email"
                     placeholder="your@email.com"
                     required
-                    className="h-11 md:h-12"
+                    className="w-full h-11 md:h-12 px-4 rounded-md border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
                   />
                 </div>
 
@@ -152,10 +157,12 @@ export const Contact = () => {
                   <label className="block text-sm font-medium text-primary mb-2">
                     Phone
                   </label>
-                  <input type="number" name="user_mobile"
-                    placeholder="+1 (234) 567-890"
+                  <input
+                    type="tel"
+                    name="user_mobile"
+                    placeholder="+91 98765 43210"
                     required
-                    className="h-11 md:h-12"
+                    className="w-full h-11 md:h-12 px-4 rounded-md border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
 
@@ -163,31 +170,22 @@ export const Contact = () => {
                   <label className="block text-sm font-medium text-primary mb-2">
                     Message
                   </label>
-                  <textarea name="message"
+                  <textarea
+                    name="message"
                     placeholder="Tell us about your project requirements..."
                     rows={4}
                     required
-                    className="resize-none"
+                    className="w-full px-4 py-3 rounded-md border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors resize-none"
                   />
                 </div>
 
-                {/* <Button
+                <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-primary hover:bg-primary/90 h-12 md:h-14"
-                  disabled={isSubmitting}
+                  className="w-full bg-primary hover:bg-primary/90 h-12 md:h-14 text-base font-semibold"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    "Send Inquiry"
-                  )}
-                </Button> */}
-                <input type="submit" value="Send" />
-
+                  Send Inquiry
+                </Button>
               </form>
             </div>
           </div>
