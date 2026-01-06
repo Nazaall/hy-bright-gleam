@@ -8,25 +8,34 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
-
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
+  const { toast } = useToast();
 
   const publicKey = 'WnkY3vrZmkxisp5Mf'
   const serviceId = 'service_op8rvvl'
   const templateId = 'template_81hculp'
   
-  const sendEmail = (e) => {
+  const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
     emailjs
-      .sendForm(serviceId, templateId, form.current, {
+      .sendForm(serviceId, templateId, form.current!, {
         publicKey: publicKey,
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          toast({
+            title: "Inquiry Sent!",
+            description: "We'll get back to you soon.",
+          });
+          form.current?.reset();
         },
         (error) => {
+          toast({
+            title: "Failed to send",
+            description: "Please try again later.",
+            variant: "destructive",
+          });
           console.log('FAILED...', error.text);
         },
       );
