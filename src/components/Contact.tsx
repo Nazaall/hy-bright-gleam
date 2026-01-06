@@ -164,7 +164,7 @@ export const Contact = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-primary mb-2">
-                    Phone
+                    Phone Number
                   </label>
                   <input
                     type="tel"
