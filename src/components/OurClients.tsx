@@ -160,12 +160,12 @@ export const OurClients = () => {
                 {[...clientLogos, ...clientLogos].map((logo, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 w-24 h-16 md:w-32 md:h-20 lg:w-40 lg:h-24 flex items-center justify-center bg-white rounded-lg p-2 md:p-3"
+                    className="flex-shrink-0 w-28 h-20 md:w-32 md:h-24 flex items-center justify-center bg-white rounded-lg p-3"
                   >
                     <img
                       src={logo.src}
                       alt={logo.alt}
-                      className="max-w-full max-h-full object-contain"
+                      className="w-20 h-14 md:w-24 md:h-16 object-contain"
                     />
                   </div>
                 ))}
