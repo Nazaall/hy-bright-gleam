@@ -1,7 +1,6 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/ozob1/public_html
     - cd repositories/hy-bright-gleam || exit 1
     - npm install
     - npm run build
-    - /bin/rsync -av --delete dist/ $DEPLOYPATH/
+    - /bin/rsync -av --delete dist/ /home/ozob1/public_html/
