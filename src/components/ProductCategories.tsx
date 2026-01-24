@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import officeBagsImage from "@/assets/office-bags-category.jpg";
 import deliveryBagsImage from "@/assets/delivery-bags-category.jpg";
 import laptopBagsImage from "@/assets/laptop-bags-category.jpg";
-import utilityBagsImage from "@/assets/utility-bags-category.jpg";
+import handbagsImage from "@/assets/handbags-category.jpg";
 
 const categories = [
   {
@@ -22,9 +22,9 @@ const categories = [
     image: laptopBagsImage,
   },
   {
-    title: "Utility Bags",
-    description: "Versatile bags for everyday business needs",
-    image: utilityBagsImage,
+    title: "Handbags",
+    description: "Elegant and functional handbags for every occasion",
+    image: handbagsImage,
   },
 ];
 
@@ -65,7 +65,7 @@ export const ProductCategories = () => {
       <div className="container px-4" ref={sectionRef}>
         <div className="text-center mb-10 md:mb-16">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 md:mb-4">
-            Our Product Range
+            Shop Our Collection
           </h2>
           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
             Comprehensive collection of bags designed for style, functionality, and durability

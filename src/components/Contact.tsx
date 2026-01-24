@@ -169,7 +169,7 @@ export const Contact = () => {
                   <input
                     type="tel"
                     name="user_mobile"
-                    placeholder="+91 98765 43210"
+                    placeholder=""
                     required
                     className="w-full h-11 md:h-12 px-4 rounded-md border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                   />
